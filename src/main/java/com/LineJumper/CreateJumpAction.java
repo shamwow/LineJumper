@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.ui.components.JBTextField;
 
 import javax.swing.*;
 
@@ -14,10 +15,15 @@ public class CreateJumpAction extends AnAction {
         JPanel panel = new JPanel();
         final JBPopup mainPopup = JBPopupFactory
                 .getInstance()
-                .createComponentPopupBuilder(panel, null)
+                .createComponentPopupBuilder(panel, panel)
+                .setTitle("Create Jump Action")
+                .setCancelOnClickOutside(true)
+                .setCancelOnOtherWindowOpen(true)
+                .setFocusable(true)
+                .setRequestFocus(true)
                 .createPopup();
 
-        JTextField txtField = new JTextField(10);
+        JBTextField txtField = new JBTextField(10);
 
         JButton button = new JButton("Confirm");
         button.addActionListener(e -> {
@@ -49,7 +55,7 @@ public class CreateJumpAction extends AnAction {
         panel.add(new JLabel("Enter desired jump size:"));
         panel.add(txtField);
         panel.add(button);
-        mainPopup.showCenteredInCurrentWindow(project);
+        mainPopup.showInFocusCenter();
         txtField.grabFocus();
     }
 }

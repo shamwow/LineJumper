@@ -1,5 +1,5 @@
 plugins {
-    id "org.jetbrains.intellij" version "0.1.10"
+    id "org.jetbrains.intellij" version "0.3.1"
 }
 
 apply plugin: 'org.jetbrains.intellij'
@@ -9,12 +9,11 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 intellij {
-    version '143.2370.31'
+    localPath '/Applications/PyCharm.app'
     pluginName 'LineJumper'
 }
 
 group 'com.LineJumper'
-version '1.0'
 
 repositories {
     mavenCentral()

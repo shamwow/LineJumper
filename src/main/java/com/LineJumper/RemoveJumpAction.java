@@ -26,7 +26,12 @@ public class RemoveJumpAction extends AnAction {
 
         final JBPopup mainPopup = JBPopupFactory
                 .getInstance()
-                .createComponentPopupBuilder(panel, null)
+                .createComponentPopupBuilder(panel, panel)
+                .setTitle("Remove Jump Actions")
+                .setCancelOnClickOutside(true)
+                .setCancelOnOtherWindowOpen(true)
+                .setFocusable(true)
+                .setRequestFocus(true)
                 .createPopup();
 
         panel.setBorder(JBUI.Borders.empty(10));

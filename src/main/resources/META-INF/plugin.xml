@@ -1,13 +1,11 @@
 <idea-plugin>
     <id>com.LineJumper</id>
     <name>LineJumper</name>
-    <version>1.0</version>
+    <version>1.2</version>
     <vendor email="shahmeernavid@gmail.com" url="https://shahmeer.co">Shahmeer Navid</vendor>
 
     <description><![CDATA[
-        Allows caret to jump a custom number of lines. Once installed, go to the "Code" file menu and from the
-        "Line Jumper" popout, add a custom line jump. This creates an action to which a keyboard shortcut can be
-        assigned. Hold shift while jumping is automatically configured to select text.
+        Allows creation of actions that enable caret to jump a custom number of lines.
     ]]></description>
 
     <change-notes><![CDATA[
@@ -17,7 +15,7 @@
     <!--This makes it so that the plugin is compatible with all JetBrain IDEs-->
     <depends>com.intellij.modules.platform</depends>
 
-    <idea-version since-build="143.2370.31"/>
+    <idea-version since-build="181"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.LineJumper.PluginState"/>

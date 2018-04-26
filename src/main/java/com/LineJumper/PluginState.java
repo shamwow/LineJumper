@@ -5,10 +5,7 @@ import com.intellij.util.containers.OrderedSet;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.NotNull;
 
-@State(
-        name="LineJumperSettings",
-        storages=@Storage(id="LineJumper", file=StoragePathMacros.APP_CONFIG+"/linejumper.xml")
-)
+@State(name="LineJumperSettings", storages=@Storage("linejumper.xml"))
 public class PluginState  implements PersistentStateComponent<PluginState> {
     static @NotNull PluginState getInstance() {
         PluginState state = ServiceManager.getService(PluginState.class);
