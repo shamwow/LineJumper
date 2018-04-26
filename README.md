@@ -6,7 +6,7 @@ Jetbrains plugin that enables custom line jump actions (moving text caret X numb
 
 - After installing, go to the 'Code' menu item and from the 'Line Jumper' pop out, select 'Create Jump Action'.
 
-![Line Jumper Menu](https://github.com/shamwow/LineJumper/blob/master/screen.png "Line Jumper Menu")
+<p align="center"><img src="https://github.com/shamwow/LineJumper/blob/master/screen.png" alt="Line Jumper Menu" height="400" /></p>
 
 - Enter the number of lines the action should jump and confirm.
 - This wil create 'Jump Up X' and 'Jump Down X' actions, shown in the 'Line Jumper' menu pop out. Keyboard shortcuts can then be assigned to each of these.
