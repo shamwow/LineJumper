@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>com.LineJumper</id>
+    <name>LineJumper</name>
+    <version>1.0</version>
+    <vendor email="shahmeernavid@gmail.com" url="https://shahmeer.co">Shahmeer Navid</vendor>
+
+    <description><![CDATA[
+        Allows caret to jump a custom number of lines. Once installed, go to the "Code" file menu and from the
+        "Line Jumper" popout, add a custom line jump. This creates an action to which a keyboard shortcut can be
+        assigned. Hold shift while jumping is automatically configured to select text.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    ]]>
+    </change-notes>
+
+    <!--This makes it so that the plugin is compatible with all JetBrain IDEs-->
+    <depends>com.intellij.modules.platform</depends>
+
+    <idea-version since-build="143.2370.31"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.LineJumper.PluginState"/>
+    </extensions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.LineJumper.PluginRegistration</implementation-class>
+        </component>
+    </application-components>
+
+    <actions>
+        <group id="LineJumper" text="Line Jumper" popup="true">
+            <action id="com.LineJumper.CreateJumpAction" class="com.LineJumper.CreateJumpAction" text="Create Jump Action"
+                    description="Create a jump action with a custom line jump">
+            </action>
+            <action id="com.LineJumper.RemoveJumpAction" class="com.LineJumper.RemoveJumpAction" text="Remove Jump Actions"
+                    description="Remove previously created jump actions">
+            </action>
+            <separator />
+            <add-to-group group-id="CodeMenu"/>
+        </group>
+    </actions>
+</idea-plugin>
