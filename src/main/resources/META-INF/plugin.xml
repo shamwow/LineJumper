@@ -1,19 +1,14 @@
 <idea-plugin>
     <id>com.LineJumper</id>
     <name>LineJumper</name>
-    <version>1.3</version>
+    <version>1.4</version>
     <vendor email="shahmeernavid@gmail.com" url="https://shahmeer.co">Shahmeer Navid</vendor>
 
     <description><![CDATA[
         Allows creation of actions that enable caret to jump a custom number of lines.
     ]]></description>
 
-    <change-notes><![CDATA[
-    ]]>
-    </change-notes>
-
-    <!--This makes it so that the plugin is compatible with all JetBrain IDEs-->
-    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.LineJumper.PluginState"/>

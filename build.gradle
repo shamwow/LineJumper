@@ -1,28 +1,32 @@
 plugins {
-    id "org.jetbrains.intellij" version "0.3.1"
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.10'
 }
 
-patchPluginXml {
-    sinceBuild '181.*'
-}
+group 'com'
+version '1.4'
 
-apply plugin: 'org.jetbrains.intellij'
-apply plugin: 'java'
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
-intellij {
-    localPath '/Applications/PyCharm.app'
-    pluginName 'LineJumper'
-}
-
-group 'com.LineJumper'
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+publishPlugin {
+    token intellijPublishToken
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.2.2'
+}
+patchPluginXml {
+    changeNotes """
+      Support for 2019 versions of intellij"""
+
+    sinceBuild '181.*'
 }
